@@ -1,0 +1,38 @@
+import { test } from '@playwright/test';
+
+/**
+ * Decorator that wraps a function with a Playwright test step.
+ * Used for reporting purposes.
+ *
+ * @example
+ ```
+    import { step } from './step_decorator';
+    class MyTestClass {
+        @step('optional step name')
+        async myTestFunction() {
+            // Test code goes here
+        }
+    }
+ ```
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function step<This, Args extends any[], Return>(message?: string) {
+  return function actualDecorator(
+    target: (this: This, ...args: Args) => Promise<Return>,
+    context: ClassMethodDecoratorContext<
+      This,
+      (this: This, ...args: Args) => Promise<Return>
+    >,
+  ) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    function replacementMethod(this: any, ...args: Args) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      const name = message ?? `${this.constructor.name}.${context.name as string}`;
+
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+      return test.step(name, async () => target.call(this, ...args), { box: true });
+    }
+
+    return replacementMethod;
+  };
+}
