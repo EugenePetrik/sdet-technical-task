@@ -52,11 +52,13 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+      grep: [new RegExp('@e2e')],
     },
 
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
+      grep: [new RegExp('@e2e')],
     },
   ],
 });
