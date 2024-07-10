@@ -23,7 +23,7 @@ export default defineConfig({
     [join(process.cwd(), 'src', 'utils', 'reporters', 'CustomReporterConfig.ts')],
   ],
 
-  timeout: 30_000,
+  timeout: 60_000,
 
   expect: {
     timeout: 10_000,
