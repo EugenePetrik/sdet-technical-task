@@ -20,7 +20,7 @@ export class OrderSummary extends Component {
   @step()
   async expectLoaded(): Promise<void> {
     await Promise.all([
-      await expect(this.title).toBeVisible(),
+      await expect(this.title).toHaveText('Order Summary'),
       await expect(this.productName).toBeVisible(),
       await expect(this.orderTotalPrice).toBeVisible(),
     ]);

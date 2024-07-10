@@ -37,6 +37,7 @@ export class CartConfigurePage extends AppPage {
       await expect(this.ipAddressInput).toBeVisible(),
       await expect(this.continueButton).toBeVisible(),
       await expect(this.addonList).toBeVisible(),
+      await this.orderSummary.expectLoaded(),
     ]);
   }
 
