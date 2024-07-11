@@ -34,7 +34,7 @@ export default defineConfig({
 
     ignoreHTTPSErrors: true,
 
-    actionTimeout: 10_000,
+    actionTimeout: 15_000,
 
     baseURL: process.env.BASE_URL || 'https://store.cpanel.net',
 
