@@ -17,6 +17,9 @@ test.describe('Checking filling form data for cPanel order', { tag: '@e2e' }, ()
 
     await test.step('Navigate to the cPanel store', async () => {
       await app.homePage.open();
+
+      await app.homePage.header.expectLoaded();
+
       await app.homePage.clickOnBrowseProductsButton();
 
       await app.storePage.expectLoaded();
@@ -134,6 +137,8 @@ test.describe('Checking filling form data for cPanel order', { tag: '@e2e' }, ()
       );
       await app.cartCheckoutPage.expectCartSubtotalPrice(totalPrice);
       await app.cartCheckoutPage.expectTotalDueTodayPrice(totalPrice);
+
+      await app.cartCheckoutPage.header.expectCartItemCount(2);
 
       await app.cartCheckoutPage.personalInformation.expectLoaded();
       await app.cartCheckoutPage.billingAddress.expectLoaded();

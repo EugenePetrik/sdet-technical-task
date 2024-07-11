@@ -7,15 +7,16 @@ import {
   OrderSummary,
   PaymentDetails,
   PersonalInformation,
-  Product,
+  type Product,
   Products,
   TermsAndConditions,
 } from './component';
+import { Header } from '../../components';
 
 export class CartCheckoutPage extends AppPage {
   public readonly pagePath = '/cart.php?a=view';
 
-  private readonly header = this.page.locator('.header-lined h1');
+  private readonly headerLocator = this.page.locator('.header-lined h1');
 
   private readonly cartSubtotalPrice = this.page.locator('#cartSubtotal');
 
@@ -37,10 +38,12 @@ export class CartCheckoutPage extends AppPage {
 
   public readonly paymentDetails = new PaymentDetails(this.page);
 
+  public readonly header = new Header(this.page);
+
   @step()
   async expectLoaded(): Promise<void> {
     await Promise.all([
-      await expect(this.header).toHaveText('Checkout'),
+      await expect(this.headerLocator).toHaveText('Checkout'),
       await expect(this.cartSubtotalPrice).toBeVisible(),
       await expect(this.totalDueTodayPrice).toBeVisible(),
     ]);
