@@ -1,7 +1,7 @@
 import { expect } from '@playwright/test';
 import { step } from '../../../utils/reporters/steps';
 import { AppPage } from '../../abstract.classes';
-import { Licenses, License } from './component';
+import { Licenses, type License } from './component';
 
 export class StorePage extends AppPage {
   public readonly pagePath = '/store/cpanel-licenses';

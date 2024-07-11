@@ -1,7 +1,7 @@
 import { expect } from '@playwright/test';
 import { step } from '../../../utils/reporters/steps';
 import { AppPage } from '../../abstract.classes';
-import { Addons, Addon, OrderSummary } from './component';
+import { Addons, type Addon, OrderSummary } from './component';
 
 export class CartConfigurePage extends AppPage {
   public readonly pagePath = '/cart.php';
