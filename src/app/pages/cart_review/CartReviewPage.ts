@@ -7,7 +7,7 @@ import { CartItem } from './component/CartItemComponent';
 export class CartReviewPage extends AppPage {
   public readonly pagePath = '/cart.php?a=view';
 
-  private readonly header = this.page.locator('.header-lined h1');
+  private readonly header = this.page.locator('.cart-body .header-lined h1');
 
   private readonly continueShoppingButton = this.page.locator('#btnContinueShopping');
 
@@ -32,7 +32,6 @@ export class CartReviewPage extends AppPage {
     title: string,
   ): Promise<Awaited<ReturnType<CartItem['details']>>> {
     const matchedFirstResult: CartItem = (await this.cartItems.getCartItems(title))[0];
-    console.log(JSON.stringify(matchedFirstResult));
     return matchedFirstResult.details();
   }
 
