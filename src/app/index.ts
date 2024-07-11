@@ -1,4 +1,5 @@
 import { PageHolder } from './abstract.classes';
+import { CartCheckoutPage } from './pages/cart_checkout/CartCheckoutPage';
 import { CartConfigurePage } from './pages/cart_configure/CartConfigurePage';
 import { CartReviewPage } from './pages/cart_review/CartReviewPage';
 import { HomePage } from './pages/HomePage';
@@ -12,4 +13,6 @@ export class Application extends PageHolder {
   public readonly cartConfigurePage = new CartConfigurePage(this.page);
 
   public readonly cartReviewPage = new CartReviewPage(this.page);
+
+  public readonly cartCheckoutPage = new CartCheckoutPage(this.page);
 }
