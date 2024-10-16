@@ -4,7 +4,7 @@ import {
   getPriceForCurrentMonth,
   priceToText,
   roundToCents,
-} from '../utils/helpres/price';
+} from '../utils/helpers/price';
 
 test.describe('Checking filling form data for cPanel order', { tag: '@e2e' }, () => {
   test('order a produce flow', async ({ app }) => {

@@ -1,7 +1,7 @@
 import { expect, type Locator } from '@playwright/test';
 import { Component } from '../../../abstract.classes';
 import { step } from '../../../../utils/reporters/steps';
-import { escapeSpecialCharsInRegExp } from '../../../../utils/helpres/regexp';
+import { escapeSpecialCharsInRegExp } from '../../../../utils/helpers/regexp';
 
 export class OrderSummary extends Component {
   private readonly root = this.page.locator('.order-summary');
