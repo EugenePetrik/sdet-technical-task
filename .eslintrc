@@ -4,7 +4,7 @@
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
-    "project": ["./tsconfig.json"],
+    "project": ["./tsconfig.json"]
   },
   "plugins": ["@typescript-eslint", "prettier"],
   "extends": [
@@ -16,14 +16,14 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "prettier",
     "plugin:prettier/recommended",
-    "plugin:playwright/recommended",
+    "plugin:playwright/recommended"
   ],
   "overrides": [
     {
       "env": { "node": true },
       "files": [".eslintrc.{js,cjs}"],
-      "parserOptions": { "sourceType": "script" },
-    },
+      "parserOptions": { "sourceType": "script" }
+    }
   ],
   "rules": {
     "import/prefer-default-export": "off",
@@ -31,6 +31,7 @@
     "import/no-unresolved": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-floating-promises": "error",
+    "@typescript-eslint/await-thenable": "off",
     "playwright/expect-expect": "off",
     "no-console": "off",
     "class-methods-use-this": "off",
@@ -39,12 +40,12 @@
     "no-empty-function": "off",
     "func-names": "off",
     "playwright/no-standalone-expect": "off",
-    "import/no-extraneous-dependencies": "off",
+    "import/no-extraneous-dependencies": "off"
   },
   "ignorePatterns": [
     "node_modules",
     "playwright-report",
     "test-results",
-    "playwright.config.ts",
-  ],
+    "playwright.config.ts"
+  ]
 }
