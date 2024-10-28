@@ -3,11 +3,11 @@ import { Component } from '../../../abstract.classes';
 import { step } from '../../../../utils/reporters/steps';
 
 export class PaymentDetails extends Component {
-  private readonly cardNumberInput = this.page.locator('#inputCardNumber');
+  private readonly cardNumberInput = this.page.locator('#stripeCreditCard');
 
-  private readonly cardExpiryInput = this.page.locator('#inputCardExpiry');
+  private readonly cardExpiryInput = this.page.locator('#stripeExpiryDate');
 
-  private readonly cardCVVInput = this.page.locator('#inputCardCVV');
+  private readonly cardCVVInput = this.page.locator('#stripeCvc');
 
   private readonly descriptionInput = this.page.locator('#inputDescription');
 

@@ -58,7 +58,6 @@ export class CartCheckoutPage extends AppPage {
   }
 
   @step()
-  // eslint-disable-next-line @typescript-eslint/require-await
   async expectProductData(
     actualData: number | string,
     expectedData: number | string,

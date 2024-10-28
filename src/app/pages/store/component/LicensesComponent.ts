@@ -20,8 +20,7 @@ export class Licenses extends Component {
     const licenses = await this.licensesLocator.all();
     const filtered = [];
 
-    // eslint-disable-next-line no-restricted-syntax
-    for await (const license of licenses) {
+    for (const license of licenses) {
       if ((await new License(license).title()) === title) {
         filtered.push(license);
       }
@@ -36,8 +35,7 @@ export class Licenses extends Component {
     const licenses = await this.licensesLocator.all();
     const details = [];
 
-    // eslint-disable-next-line no-restricted-syntax
-    for await (const license of licenses) {
+    for (const license of licenses) {
       details.push(await new License(license).details());
     }
 

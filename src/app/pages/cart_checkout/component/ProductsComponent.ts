@@ -20,8 +20,7 @@ export class Products extends Component {
     const products = await this.productsLocator.all();
     const filtered = [];
 
-    // eslint-disable-next-line no-restricted-syntax
-    for await (const product of products) {
+    for (const product of products) {
       if ((await new Product(product).productType()) === productType) {
         filtered.push(product);
       }
@@ -36,8 +35,7 @@ export class Products extends Component {
     const products = await this.productsLocator.all();
     const details = [];
 
-    // eslint-disable-next-line no-restricted-syntax
-    for await (const product of products) {
+    for (const product of products) {
       details.push(await new Product(product).details());
     }
 

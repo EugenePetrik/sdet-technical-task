@@ -20,8 +20,7 @@ export class CartItems extends Component {
     const items = await this.itemsLocator.all();
     const filtered = [];
 
-    // eslint-disable-next-line no-restricted-syntax
-    for await (const item of items) {
+    for (const item of items) {
       if ((await new CartItem(item).title()).includes(title)) {
         filtered.push(item);
       }
@@ -36,8 +35,7 @@ export class CartItems extends Component {
     const items = await this.itemsLocator.all();
     const details = [];
 
-    // eslint-disable-next-line no-restricted-syntax
-    for await (const item of items) {
+    for (const item of items) {
       details.push(await new CartItem(item).details());
     }
 

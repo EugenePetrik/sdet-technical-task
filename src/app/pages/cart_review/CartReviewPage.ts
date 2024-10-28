@@ -35,7 +35,6 @@ export class CartReviewPage extends AppPage {
   }
 
   @step()
-  // eslint-disable-next-line @typescript-eslint/require-await
   async expectOrderItemPrice(actualPrice: number, expectedPrice: number): Promise<void> {
     expect(actualPrice).toEqual(expectedPrice);
   }

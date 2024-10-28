@@ -20,8 +20,7 @@ export class Addons extends Component {
     const addons = await this.addonsLocator.all();
     const filtered = [];
 
-    // eslint-disable-next-line no-restricted-syntax
-    for await (const addon of addons) {
+    for (const addon of addons) {
       if ((await new Addon(addon).title()) === title) {
         filtered.push(addon);
       }
@@ -36,8 +35,7 @@ export class Addons extends Component {
     const addons = await this.addonsLocator.all();
     const details = [];
 
-    // eslint-disable-next-line no-restricted-syntax
-    for await (const addon of addons) {
+    for (const addon of addons) {
       details.push(await new Addon(addon).details());
     }
 
