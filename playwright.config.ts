@@ -36,7 +36,7 @@ export default defineConfig({
 
     actionTimeout: 15_000,
 
-    baseURL: process.env.BASE_URL || 'https://store.cpanel.net',
+    baseURL: process.env.BASE_URL ?? 'https://store.cpanel.net',
 
     trace: {
       mode: 'retain-on-failure',
