@@ -37,7 +37,8 @@
     },
     "dependencies": {
         "@playwright/test": "^1.50.1",
-        "dotenv": "^16.4.7"
+        "dotenv": "^16.4.7",
+        "envalid": "^8.0.0"
     },
     "husky": {
         "hooks": {

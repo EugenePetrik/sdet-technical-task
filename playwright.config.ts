@@ -1,6 +1,7 @@
-import { defineConfig, devices } from '@playwright/test';
-import { join } from 'path';
 import { config } from 'dotenv';
+import { join } from 'path';
+import { CONFIG } from './config/env';
+import { defineConfig, devices } from '@playwright/test';
 
 config();
 
@@ -36,7 +37,7 @@ export default defineConfig({
 
     actionTimeout: 15_000,
 
-    baseURL: process.env.BASE_URL ?? 'https://store.cpanel.net',
+    baseURL: CONFIG.BASE_URL,
 
     trace: {
       mode: 'retain-on-failure',
